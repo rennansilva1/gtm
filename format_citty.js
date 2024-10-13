@@ -1,8 +1,10 @@
 (function() {
+    console.log('Script format_citty.js carregado com sucesso.');  // Log para indicar que o script foi carregado
+
     function formatCityAPI(cityName, onSuccess, onFailure) {
-        console.log('formatCityAPI chamada com a cidade: ' + cityName);  // Log para confirmar a chamada
+        console.log('formatCityAPI chamada com a cidade: ' + cityName);  // Log para verificar se a função foi chamada
         var apiUrl = 'https://api.theblackfox.app/api:cm6Pi0eK/cidade?cidade=' + encodeURIComponent(cityName);
-        
+
         // Faz a requisição à API da cidade
         var xhr = new XMLHttpRequest();
         xhr.open('GET', apiUrl, true);
@@ -29,6 +31,7 @@
         xhr.send();
     }
 
-    // Verifica se a função está presente no escopo global
+    // Verifica se a função está presente no escopo global33
     window.formatCityAPI = formatCityAPI;
+    console.log('Função formatCityAPI registrada no window.');
 })();
